@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
-    <link rel="stylesheet" href="styles.css?v=20260605-cta">
+    <link rel="stylesheet" href="styles.css?v=20260605-nav">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- This small script prevents "flash of white" before dark mode loads -->
@@ -20,11 +20,15 @@
         <div class="nav-container">
             <h1 class="logo">MyPortfolio<span class="dot">.</span></h1>
             <div class="nav-right">
-                <ul class="nav-links">
+                <ul class="nav-links" id="nav-links">
                     <li><a href="#about">About</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#achievements">Achievements</a></li>
                 </ul>
+
+                <button id="mobile-nav-toggle" class="mobile-nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                </button>
                 
                 <!-- Theme Toggle Button -->
                 <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
@@ -86,6 +90,6 @@
         </div>
     </footer>
 
-    <script src="script.js?v=20260605-cta"></script>
+    <script src="script.js?v=20260605-nav"></script>
 </body>
 </html>

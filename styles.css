@@ -52,6 +52,7 @@ body {
     color: var(--text-main);
     line-height: 1.6;
     transition: background-color 0.4s ease, color 0.4s ease;
+    overflow-x: hidden;
 }
 
 /* --- NAVIGATION --- */
@@ -91,6 +92,7 @@ nav {
     display: flex;
     align-items: center;
     gap: 2rem;
+    position: relative;
 }
 
 .nav-links {
@@ -109,6 +111,25 @@ nav {
 
 .nav-links a:hover {
     color: var(--primary);
+}
+
+.mobile-nav-toggle {
+    display: none;
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    border-radius: 12px;
+    padding: 0.5rem;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+.mobile-nav-toggle:hover {
+    background: var(--bg-alt);
+    border-color: var(--primary);
+    transform: translateY(-1px);
 }
 
 /* Theme Toggle Button */
@@ -135,7 +156,7 @@ nav {
 
 /* --- HERO SECTION --- */
 .hero {
-    min-height: 100vh;
+    min-height: 100svh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -457,12 +478,141 @@ nav {
 
 /* --- RESPONSIVE DESIGN --- */
 @media (max-width: 768px) {
-    .nav-links { display: none; }
-    .hero-buttons { flex-direction: column; }
-    .hero-title { font-size: 2.8rem; }
-    .card { padding: 2rem 1.5rem; }
+    .nav-container {
+        padding: 1rem 1rem;
+    }
+
+    .nav-right {
+        gap: 0.5rem;
+    }
+
+    .mobile-nav-toggle {
+        display: inline-flex;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: calc(100% + 0.75rem);
+        right: 0;
+        flex-direction: column;
+        gap: 0.75rem;
+        width: min(240px, calc(100vw - 2rem));
+        padding: 1rem;
+        border: 1px solid var(--border-color);
+        border-radius: 18px;
+        background: var(--bg-card);
+        box-shadow: var(--card-shadow-hover);
+        z-index: 1100;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links a {
+        display: block;
+        width: 100%;
+        padding: 0.4rem 0;
+    }
+
+    .hero {
+        padding: 0 1rem;
+        padding-top: 84px;
+    }
+
+    .hero-title { font-size: clamp(2.3rem, 11vw, 3rem); }
+    .hero-subtitle { font-size: 1rem; }
+    .hero-content .bio { font-size: 1rem; margin-bottom: 2rem; }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .section {
+        padding: 4rem 1rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .card {
+        padding: 1.5rem 1.25rem;
+    }
+
+    .card-link,
+    .linkedin-btn,
+    .paper-link {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .achievement-card {
+        padding: 1.25rem 1.25rem;
+    }
+
     .achievement-header {
         flex-direction: column;
         align-items: flex-start;
+        width: 100%;
+    }
+
+    .achievement-header .linkedin-btn {
+        width: 100%;
+    }
+
+    .achievement-links,
+    .social-links {
+        width: 100%;
+        gap: 0.5rem;
+    }
+
+    .social-links {
+        flex-wrap: wrap;
+    }
+
+    .footer {
+        padding: 4rem 1rem 2.5rem 1rem;
+    }
+
+    .footer-container h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.25rem;
+    }
+
+    .theme-toggle {
+        padding: 0.4rem;
+    }
+
+    .card h3,
+    .achievement-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .card p,
+    .achievement-card p {
+        font-size: 0.96rem;
+    }
+
+    .btn {
+        padding: 0.75rem 1.25rem;
     }
 }

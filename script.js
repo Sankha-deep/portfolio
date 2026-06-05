@@ -90,6 +90,8 @@ const myAchievements = [
 document.addEventListener('DOMContentLoaded', () => {
     
     // --- DARK/LIGHT MODE TOGGLE LOGIC ---
+    const mobileNavToggle = document.getElementById('mobile-nav-toggle');
+    const navLinks = document.getElementById('nav-links');
     const themeToggle = document.getElementById('theme-toggle');
     const sunIcon = document.getElementById('sun-icon');
     const moonIcon = document.getElementById('moon-icon');
@@ -121,6 +123,19 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('theme', 'dark');
             updateIcon('dark');
         }
+    });
+
+    // Mobile nav toggle
+    mobileNavToggle.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('open');
+        mobileNavToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('open');
+            mobileNavToggle.setAttribute('aria-expanded', 'false');
+        });
     });
 
     // --- DATA INJECTION LOGIC ---
