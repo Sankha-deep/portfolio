@@ -67,7 +67,7 @@ const myAchievements = [
         links: [
             {
                 label: "Issue",
-                url: "https://ymerdigital.eu/current-issue/?cpage=2"
+                url: "https://ymerdigital.eu/archives/?cpage=2&issId=%202505"
             }
         ]
     },
