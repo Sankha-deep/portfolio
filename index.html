@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- This small script prevents "flash of white" before dark mode loads -->
+    <script>
+        const savedTheme = localStorage.getItem('theme') || 
+            (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <h1 class="logo">MyPortfolio<span class="dot">.</span></h1>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#achievements">Achievements</a></li>
+                </ul>
+                
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+                    <!-- Moon Icon -->
+                    <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    <!-- Sun Icon -->
+                    <svg id="sun-icon" class="hidden" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero/About Section -->
+    <header id="about" class="hero">
+        <div class="hero-content">
+            <h2 class="hero-title">Hello, I'm <br><span class="gradient-text" id="my-name">Your Name</span></h2>
+            <p id="my-title" class="hero-subtitle">A passionate Developer & Creator</p>
+            <p class="bio" id="my-bio">Loading bio...</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section bg-alt">
+        <div class="section-container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="grid" id="projects-grid">
+                <!-- Projects injected here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="section">
+        <div class="section-container">
+            <h2 class="section-title">Achievements & Milestones</h2>
+            <div class="timeline" id="achievements-timeline">
+                <!-- Achievements injected here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact Section -->
+    <footer id="contact" class="footer">
+        <div class="footer-container">
+            <h2 class="gradient-text">Let's Build Something Great.</h2>
+            <p>I'm currently open to new opportunities and exciting projects.</p>
+            <a href="#" class="btn btn-primary" id="contact-email">Say Hello</a>
+            
+            <div class="social-links">
+                <a href="#" id="link-github" target="_blank">GitHub</a>
+                <a href="#" id="link-linkedin" target="_blank">LinkedIn</a>
+                
+            </div>
+            <p class="copyright">&copy; <span id="year"></span> <span id="copyright-name"></span>. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
