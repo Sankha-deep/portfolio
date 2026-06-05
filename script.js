@@ -66,14 +66,6 @@ const myAchievements = [
         description: "Published two international journal papers in YMER (Vol. 25, Issue 05) on misinformation detection and AI chatbots for mental health rehabilitation.",
         links: [
             {
-                label: "Paper 1",
-                url: "https://doi.org/10.37896/YMER25.05/22"
-            },
-            {
-                label: "Paper 2",
-                url: "https://doi.org/10.37896/YMER25.05/23"
-            },
-            {
                 label: "Issue",
                 url: "https://ymerdigital.eu/current-issue/?cpage=2"
             }
