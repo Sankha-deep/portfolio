@@ -60,6 +60,25 @@ const myAchievements = [
     title: "Figma for UI/UX: Master Web Design in Figma",
     description: "Completed advanced training in UI/UX design using Figma, covering wireframing, prototyping, responsive interfaces, design systems, and user-centered web design principles."
     },
+    {
+        date: "2026",
+        title: "2 YMER Journal Papers Published",
+        description: "Published two international journal papers in YMER (Vol. 25, Issue 05) on misinformation detection and AI chatbots for mental health rehabilitation.",
+        links: [
+            {
+                label: "Paper 1",
+                url: "https://doi.org/10.37896/YMER25.05/22"
+            },
+            {
+                label: "Paper 2",
+                url: "https://doi.org/10.37896/YMER25.05/23"
+            },
+            {
+                label: "Issue",
+                url: "https://ymerdigital.eu/current-issue/?cpage=2"
+            }
+        ]
+    },
     
 ];
 
@@ -145,6 +164,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="achievement-date">${achievement.date}</div>
                 <h3>${achievement.title}</h3>
                 <p>${achievement.description}</p>
+                ${achievement.links ? `
+                    <div class="achievement-links">
+                        ${achievement.links.map(link => `
+                            <a href="${link.url}" target="_blank" rel="noopener noreferrer" class="paper-link">
+                                ${link.label}
+                            </a>
+                        `).join('')}
+                    </div>
+                ` : ''}
             </div>
         `).join('');
 });
