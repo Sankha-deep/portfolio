@@ -162,7 +162,12 @@ document.addEventListener('DOMContentLoaded', () => {
     achievementsTimeline.innerHTML = myAchievements.map(achievement => `
             <div class="achievement-card">
                 <div class="achievement-date">${achievement.date}</div>
-                <h3>${achievement.title}</h3>
+                <div class="achievement-header">
+                    <h3>${achievement.title}</h3>
+                    <a href="${profileData.linkedin}" target="_blank" rel="noopener noreferrer" class="linkedin-btn">
+                        View in LinkedIn
+                    </a>
+                </div>
                 <p>${achievement.description}</p>
                 ${achievement.links ? `
                     <div class="achievement-links">
